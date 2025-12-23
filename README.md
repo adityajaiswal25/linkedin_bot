@@ -1,5 +1,8 @@
 # LinkedIn Automation Tool
 
+Video link - https://drive.google.com/file/d/1stv2ksEP4I1iciLXZ_VKoUJXPzxyf3uw/view?usp=sharing
+
+
 A sophisticated Go-based LinkedIn automation tool using the Rod library that showcases advanced browser automation capabilities, human-like behavior simulation, and sophisticated anti-bot detection techniques.
 
 ## Features
