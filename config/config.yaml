@@ -1,0 +1,96 @@
+# LinkedIn Automation Configuration
+
+# Browser Settings
+browser:
+  headless: false
+  timeout: 30000  # milliseconds
+  viewport:
+    width: 1920
+    height: 1080
+
+# LinkedIn Credentials (can be overridden by environment variables)
+linkedin:
+  email: ""  # Set via LINKEDIN_EMAIL env var
+  password: ""  # Set via LINKEDIN_PASSWORD env var
+  base_url: "https://www.linkedin.com"
+
+# Search Configuration
+search:
+  max_results: 100
+  results_per_page: 10
+  pagination_delay: 3000  # milliseconds
+
+# Connection Request Settings
+connections:
+  daily_limit: 50
+  min_delay: 5000  # milliseconds
+  max_delay: 15000  # milliseconds
+  default_note: "Hi {name}, I'd like to connect with you!"
+
+# Messaging Settings
+messaging:
+  enabled: true
+  follow_up_delay: 3600000  # 1 hour in milliseconds
+  message_templates:
+    - "Hi {name}, thanks for connecting! I'd love to learn more about your work in {industry}."
+    - "Hello {name}, great to connect! Looking forward to networking with you."
+
+# Anti-Bot Detection Settings
+stealth:
+  mouse_movement:
+    enabled: true
+    bezier_curves: true
+    overshoot_probability: 0.3
+    micro_corrections: true
+  
+  timing:
+    enabled: true
+    min_think_time: 1000  # milliseconds
+    max_think_time: 5000  # milliseconds
+    scroll_speed_variance: 0.3
+  
+  fingerprint:
+    enabled: true
+    randomize_user_agent: true
+    randomize_viewport: true
+    disable_webdriver_flag: true
+  
+  scrolling:
+    enabled: true
+    variable_speed: true
+    scroll_back_probability: 0.2
+  
+  typing:
+    enabled: true
+    min_keystroke_delay: 50  # milliseconds
+    max_keystroke_delay: 200  # milliseconds
+    typo_probability: 0.05
+  
+  hovering:
+    enabled: true
+    hover_probability: 0.4
+    hover_duration_min: 500  # milliseconds
+    hover_duration_max: 2000  # milliseconds
+  
+  scheduling:
+    enabled: true
+    business_hours_only: true
+    start_hour: 9
+    end_hour: 17
+    break_probability: 0.1
+  
+  rate_limiting:
+    enabled: true
+    connection_cooldown: 60000  # 1 minute
+    message_cooldown: 30000  # 30 seconds
+
+# Database Settings
+database:
+  path: "./data/linkedin_automation.db"
+
+# Logging Settings
+logging:
+  level: "info"  # debug, info, warn, error
+  format: "json"  # json or text
+  output: "stdout"  # stdout or file path
+
